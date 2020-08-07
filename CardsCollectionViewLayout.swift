@@ -50,7 +50,7 @@ open class CardsCollectionViewLayout: UICollectionViewLayout {
   override open func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
     let totalItemsCount = collectionView.numberOfItems(inSection: 0)
 
-    let minVisibleIndex = max(Int(collectionView.contentOffset.x) / Int(collectionView.bounds.width), 0)
+    var minVisibleIndex = max(Int(collectionView.contentOffset.x) / Int(collectionView.bounds.width), 0)
     let maxVisibleIndex = min(minVisibleIndex + maximumVisibleItems, totalItemsCount)
 
     let contentCenterX = collectionView.contentOffset.x + (collectionView.bounds.width / 2.0)
